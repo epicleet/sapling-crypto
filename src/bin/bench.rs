@@ -41,6 +41,7 @@ fn main() {
         },
         rng
     ).unwrap();
+    groth_params.write(std::fs::File::create("groth.params").unwrap()).unwrap();
 
     const SAMPLES: u32 = 50;
 

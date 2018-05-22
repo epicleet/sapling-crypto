@@ -14,6 +14,7 @@ pub mod sha256;
 
 pub mod sapling;
 pub mod sprout;
+pub mod preimage;
 
 use bellman::{
     SynthesisError
