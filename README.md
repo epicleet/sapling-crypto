@@ -1,23 +1,15 @@
-# sapling-crypto
+# Preimage experiment
 
-This repository contains a (work-in-progress) implementation of Zcash's "Sapling" cryptography.
+We have implemented a simple [preimage circuit](src/circuit/preimage/mod.rs) which checks whether two distinct 128-bit witnesses are the preimage of two different Blake2b public hash values.
 
-## Security Warnings
+## Running the experiment
 
-This library is currently under development and has not been reviewed.
+```
+cargo build --release
+./target/release/bench_preimage
+```
 
-## License
+## Results
 
-Licensed under either of
-
- * Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
- * MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
-
-at your option.
-
-### Contribution
-
-Unless you explicitly state otherwise, any contribution intentionally
-submitted for inclusion in the work by you, as defined in the Apache-2.0
-license, shall be dual licensed as above, without any additional terms or
-conditions.
+ * Size of the public parameters file (`groth.params`): 23041944 bytes
+ * Mean running time (Intel Core i7-5500U CPU): 1.4 seconds
